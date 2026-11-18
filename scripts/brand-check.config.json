@@ -1,0 +1,28 @@
+{
+  "site": "Northgate Logistics",
+  "tokensFile": "src/styles/tokens.css",
+  "brandColours": "navy, white, slate and light grey",
+  "brandFonts": "IBM Plex Sans",
+  "scan": ["src"],
+  "protectedPaths": [
+    "src/styles/tokens.css",
+    "src/components/LegalFooter.astro",
+    "src/layouts/**",
+    "src/content.config.ts",
+    "astro.config.*",
+    ".github/**",
+    "scripts/**",
+    "vercel.json",
+    "package.json",
+    "package-lock.json"
+  ],
+  "pagesDir": "src/pages",
+  "newPageHint": "New landing pages are added as a JSON file in src/content/campaigns, which uses the campaign template.",
+  "requiredContent": [
+    {
+      "name": "Legal footer",
+      "pages": "all",
+      "contains": "Northgate Logistics Ltd. Registered in England and Wales, company no. 00000000. Fictional company for demonstration."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+# Site checks. PROTECTED FILE.
+# Runs on every pull request to main. The ruleset on main requires both jobs to pass before merging.
+name: Checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  brand:
+    name: Brand check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: lts/*
+      - name: Colours, fonts and protected files
+        run: node scripts/brand-check.mjs ${{ github.event_name == 'pull_request' && format('--base {0}', github.event.pull_request.base.sha) || '' }}
+
+  build:
+    name: Build, content and links
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: lts/*
+          cache: npm
+      - run: npm ci
+      - name: Build (also validates content against the schemas)
+        run: npm run build
+      - name: Protected content
+        run: node scripts/protected-content-check.mjs
+      - name: Links
+        run: node scripts/link-check.mjs
