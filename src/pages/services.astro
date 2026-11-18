@@ -1,0 +1,45 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Picture from '../components/Picture.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const page = (await getEntry('servicesPage', 'services'))!.data;
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title={page.title} description={page.description}>
+  <section class="section">
+    <div class="container">
+      <h1>{page.heading}</h1>
+      <p class="lede">{page.intro}</p>
+    </div>
+  </section>
+
+  {services.map((s, i) => (
+    <section id={s.id} class:list={['section', 'service', { 'section--tint': i % 2 === 0 }]}>
+      <div class="container service__inner">
+        <div>
+          <h2>{s.data.title}</h2>
+          <p class="lede">{s.data.summary}</p>
+          <p>{s.data.detail}</p>
+          <ul class="ticks">
+            {s.data.points.map((point) => <li>{point}</li>)}
+          </ul>
+        </div>
+        <Picture image={s.data.image} ratio="4 / 3" />
+      </div>
+    </section>
+  ))}
+
+  <CtaBand cta={page.cta} />
+</Base>
+
+<style>
+  .service { padding: var(--space-16) 0; scroll-margin-top: var(--space-4); }
+  .service__inner {
+    display: grid;
+    gap: var(--space-12);
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+</style>

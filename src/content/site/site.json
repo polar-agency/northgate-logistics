@@ -1,0 +1,30 @@
+{
+  "name": "Northgate Logistics",
+  "description": "Road freight, warehousing, cold chain and customs services for UK businesses, run from our headquarters near Harlow.",
+  "nav": [
+    { "label": "Home", "href": "/" },
+    { "label": "Services", "href": "/services" },
+    { "label": "Sectors", "href": "/sectors" },
+    { "label": "About", "href": "/about" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "phone": "01632 960 700",
+  "email": "enquiries@northgatelogistics.example",
+  "depots": [
+    {
+      "name": "Head office and Harlow depot",
+      "address": ["Unit 4, Northgate Park", "Fernfield Road", "Harlow, Essex CM0 0AA"],
+      "phone": "01632 960 700"
+    },
+    {
+      "name": "Midlands depot",
+      "address": ["Plot 12, Linfield Distribution Park", "Coleby Lane", "Daventry NN0 0BB"],
+      "phone": "01632 960 715"
+    },
+    {
+      "name": "North depot",
+      "address": ["Bay 3, Ashworth Trade Centre", "Mill Road", "Wakefield WF0 0CC"],
+      "phone": "01632 960 730"
+    }
+  ]
+}

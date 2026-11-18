@@ -1,0 +1,73 @@
+/*
+ * Northgate Logistics design tokens.
+ * PROTECTED FILE: the only place colours, fonts and spacing values may be defined.
+ * Everything else must use var(--token).
+ */
+
+@import '@fontsource-variable/ibm-plex-sans';
+
+:root {
+  /* Brand palette (from the brief). Navy and white only for buttons and CTAs. */
+  --color-navy: #0B1F3A;
+  --color-white: #FFFFFF;
+  --color-slate: #5B6573;
+  --color-light-grey: #EEF1F5;
+
+  /* Tints and shades, mixed from the palette only */
+  --color-navy-dark: color-mix(in srgb, var(--color-navy) 80%, black);
+  --color-navy-soft: color-mix(in srgb, var(--color-navy) 70%, var(--color-white));
+  --color-grey-line: color-mix(in srgb, var(--color-light-grey) 80%, var(--color-slate));
+
+  /* Roles */
+  --color-bg: var(--color-white);
+  --color-surface: var(--color-light-grey);
+  --color-text: var(--color-navy);
+  --color-text-muted: var(--color-slate);
+  --color-primary: var(--color-navy);
+  --color-primary-hover: var(--color-navy-dark);
+  --color-on-primary: var(--color-white);
+  --color-on-primary-muted: var(--color-light-grey);
+  --color-border: var(--color-grey-line);
+  --color-focus: var(--color-navy-soft);
+
+  /* Fonts */
+  --font-heading: 'IBM Plex Sans Variable', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans Variable', system-ui, sans-serif;
+
+  /* Type scale */
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: clamp(2.25rem, 5vw, 3.5rem);
+  --text-stat: clamp(2.25rem, 4vw, 3rem);
+  --leading-tight: 1.15;
+  --leading-body: 1.6;
+  --tracking-label: 0.08em;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-bold: 600;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* Shape: square-ish corners */
+  --radius-sm: 4px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --border-width: 1px;
+
+  /* Layout */
+  --content-width: 72rem;
+  --text-width: 44rem;
+}

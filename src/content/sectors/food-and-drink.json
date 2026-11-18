@@ -1,0 +1,6 @@
+{
+  "title": "Food and drink",
+  "order": 2,
+  "summary": "Chilled, frozen and ambient logistics for producers, wholesalers and caterers.",
+  "needs": ["Temperature-controlled transport", "Short shelf-life planning", "Batch and date tracking"]
+}

@@ -1,0 +1,6 @@
+{
+  "title": "Pharma",
+  "order": 3,
+  "summary": "Controlled handling and documented temperature records for healthcare products.",
+  "needs": ["Monitored storage and transport", "Full chain-of-custody records", "Secure, restricted-access storage"]
+}

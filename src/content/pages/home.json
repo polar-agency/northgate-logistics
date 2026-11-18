@@ -1,0 +1,30 @@
+{
+  "title": "Northgate Logistics | Freight, warehousing and cold chain",
+  "description": "Northgate Logistics provides road freight, warehousing, cold chain and customs services for UK businesses.",
+  "hero": {
+    "heading": "Freight that keeps its promises",
+    "text": "Road freight, warehousing and cold chain logistics for businesses that cannot afford a missed delivery. Planned carefully, tracked throughout and reported clearly.",
+    "image": { "alt": "Northgate lorries lined up at the Harlow depot loading bays" },
+    "primaryCta": { "label": "Request a quote", "href": "/contact" },
+    "secondaryCta": { "label": "Our services", "href": "/services" }
+  },
+  "services": {
+    "heading": "What we do",
+    "intro": "Four services, one accountable partner."
+  },
+  "stats": [
+    { "value": "98.7%", "label": "On-time delivery over the last 12 months" },
+    { "value": "3", "label": "Depots across England" },
+    { "value": "140,000", "label": "Pallets delivered each year" },
+    { "value": "24/7", "label": "Operations and tracking" }
+  ],
+  "sectors": {
+    "heading": "Sectors we serve",
+    "intro": "Each sector has its own requirements. Our teams are organised around them."
+  },
+  "cta": {
+    "heading": "Discuss your requirements",
+    "text": "Tell us what you need to move or store, and a member of our team will respond within one working day.",
+    "button": { "label": "Contact us", "href": "/contact" }
+  }
+}

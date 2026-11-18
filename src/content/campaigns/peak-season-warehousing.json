@@ -1,0 +1,39 @@
+{
+  "title": "Peak season warehousing | Northgate Logistics",
+  "description": "Flexible warehouse capacity and dispatch for the peak trading period.",
+  "hero": {
+    "eyebrow": "Peak season 2026",
+    "heading": "Warehouse capacity for your busiest weeks",
+    "text": "Secure additional storage and dispatch capacity for October to January, without a long-term commitment.",
+    "image": { "alt": "Warehouse team preparing retail orders for dispatch" },
+    "cta": { "label": "Reserve capacity", "href": "/contact" }
+  },
+  "intro": [
+    "Peak trading places pressure on every part of the supply chain. Storage fills, dispatch volumes rise and delivery windows tighten.",
+    "Our peak season service gives you additional pallet space and pick-and-pack capacity at our Harlow and Daventry warehouses, on terms that match the season."
+  ],
+  "benefitsHeading": "Why businesses choose Northgate for peak",
+  "benefits": [
+    { "title": "Flexible terms", "text": "Reserve space by the week, from October to January, with no long-term contract." },
+    { "title": "Same-day dispatch", "text": "Orders received by 2pm are picked, packed and dispatched the same day." },
+    { "title": "Clear reporting", "text": "Stock levels and order status are visible to your team at all times." }
+  ],
+  "proof": {
+    "value": "99.2%",
+    "label": "Order accuracy during peak 2025",
+    "text": "Measured across all warehouse customers between October and January."
+  },
+  "cta": {
+    "heading": "Reserve your peak capacity",
+    "text": "Space is allocated in order of request. Contact us to discuss volumes and dates.",
+    "button": { "label": "Request a quote", "href": "/contact" }
+  },
+  "faq": {
+    "heading": "Frequently asked questions",
+    "items": [
+      { "question": "What is the minimum commitment?", "answer": "Space can be reserved for a minimum of two weeks." },
+      { "question": "Can you handle returns?", "answer": "Yes. Returns can be received, inspected and restocked as part of the service." },
+      { "question": "How soon can we start?", "answer": "Most customers are receiving stock within ten working days of agreeing terms." }
+    ]
+  }
+}

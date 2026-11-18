@@ -1,0 +1,12 @@
+{
+  "title": "Cold chain",
+  "order": 3,
+  "summary": "Chilled and frozen transport and storage, monitored at every stage.",
+  "detail": "Temperature-controlled vehicles and storage chambers, with continuous monitoring and a full temperature record for every consignment.",
+  "points": [
+    "Chilled (2 to 8°C) and frozen (−18°C and below) capacity",
+    "Continuous temperature logging with alerts",
+    "Temperature records supplied with each delivery"
+  ],
+  "image": { "alt": "Refrigerated trailer at a loading bay with its doors open" }
+}

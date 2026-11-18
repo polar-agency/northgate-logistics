@@ -1,0 +1,6 @@
+{
+  "title": "Manufacturing",
+  "order": 4,
+  "summary": "Inbound parts and outbound finished goods, timed to your production schedule.",
+  "needs": ["Just-in-time inbound deliveries", "Bulk and oversized loads", "Import and export support"]
+}

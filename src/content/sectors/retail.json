@@ -1,0 +1,6 @@
+{
+  "title": "Retail",
+  "order": 1,
+  "summary": "Store and online fulfilment that keeps shelves stocked through peak trading.",
+  "needs": ["Booked-in deliveries to distribution centres", "Seasonal storage capacity", "Returns handling"]
+}

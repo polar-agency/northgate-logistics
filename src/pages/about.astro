@@ -1,0 +1,89 @@
+---
+import { getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Picture from '../components/Picture.astro';
+
+const page = (await getEntry('about', 'about'))!.data;
+---
+<Base title={page.title} description={page.description}>
+  <section class="section">
+    <div class="container intro">
+      <div>
+        <h1>{page.heading}</h1>
+        <p class="lede">{page.intro}</p>
+      </div>
+      <Picture image={page.image} ratio="4 / 3" />
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container">
+      <h2>{page.history.heading}</h2>
+      <ol class="timeline">
+        {page.history.milestones.map((m) => (
+          <li>
+            <span class="timeline__year">{m.year}</span>
+            <p>{m.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>{page.accreditations.heading}</h2>
+        <p class="lede">{page.accreditations.intro}</p>
+      </div>
+      <ul class="grid accreditations">
+        {page.accreditations.items.map((a) => (
+          <li class="card">
+            <h3>{a.name}</h3>
+            <p>{a.note}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container">
+      <h2>{page.leadership.heading}</h2>
+      <div class="grid">
+        {page.leadership.people.map((person) => (
+          <article class="card">
+            <Picture image={person.image} ratio="1 / 1" />
+            <h3 class="person__name">{person.name}</h3>
+            <p class="person__role">{person.role}</p>
+            <p>{person.bio}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .intro {
+    display: grid;
+    gap: var(--space-12);
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+  .timeline {
+    list-style: none;
+    margin: var(--space-8) 0 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-8);
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  }
+  .timeline li { border-top: 2px solid var(--color-primary); padding-top: var(--space-4); }
+  .timeline__year { display: block; font-size: var(--text-xl); font-weight: var(--weight-bold); margin-bottom: var(--space-2); }
+  .timeline p { color: var(--color-text-muted); margin: 0; }
+  .accreditations { list-style: none; margin: 0; padding: 0; }
+  .accreditations p { color: var(--color-text-muted); margin: 0; }
+  .person__name { margin: var(--space-4) 0 0; font-size: var(--text-xl); }
+  .person__role { color: var(--color-text-muted); font-weight: var(--weight-medium); }
+</style>

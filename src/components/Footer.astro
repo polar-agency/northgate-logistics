@@ -1,0 +1,45 @@
+---
+import { getEntry } from 'astro:content';
+const site = (await getEntry('site', 'site'))!.data;
+---
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>
+      <p class="footer__name">{site.name}</p>
+      <p><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a></p>
+      <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+    </div>
+    {site.depots.map((depot) => (
+      <div>
+        <p class="footer__heading">{depot.name}</p>
+        <address>
+          {depot.address.map((line) => <span>{line}<br /></span>)}
+        </address>
+      </div>
+    ))}
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-primary);
+    color: var(--color-on-primary-muted);
+    padding: var(--space-12) 0;
+    font-size: var(--text-sm);
+  }
+  .footer__inner {
+    display: grid;
+    gap: var(--space-8);
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  }
+  .footer__name,
+  .footer__heading {
+    color: var(--color-on-primary);
+    font-weight: var(--weight-bold);
+    margin-bottom: var(--space-2);
+  }
+  .footer__name { font-size: var(--text-lg); }
+  address { font-style: normal; }
+  .footer a { color: var(--color-on-primary); }
+  .footer a:hover { color: var(--color-on-primary-muted); }
+</style>

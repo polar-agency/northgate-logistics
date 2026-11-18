@@ -1,0 +1,12 @@
+{
+  "title": "Customs and compliance",
+  "order": 4,
+  "summary": "Import and export paperwork handled, so goods clear borders without delay.",
+  "detail": "Our customs team prepares declarations and supporting documents, and advises on the rules that apply to your goods before they move.",
+  "points": [
+    "Import and export declarations",
+    "Commodity code and origin checks",
+    "Guidance on documentation for regulated goods"
+  ],
+  "image": { "alt": "Customs officer reviewing shipping documents at a desk" }
+}

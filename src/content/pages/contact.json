@@ -1,0 +1,20 @@
+{
+  "title": "Contact | Northgate Logistics",
+  "description": "Request a quote or speak to the Northgate Logistics team.",
+  "heading": "Contact us",
+  "intro": "Complete the form and the relevant team will respond within one working day. For urgent operational matters, please call your depot directly.",
+  "depotsHeading": "Our depots",
+  "form": {
+    "heading": "Send an enquiry",
+    "nameLabel": "Full name",
+    "companyLabel": "Company",
+    "emailLabel": "Email address",
+    "phoneLabel": "Phone number",
+    "serviceLabel": "Service of interest",
+    "servicePlaceholder": "Select a service",
+    "otherOption": "Other or not sure",
+    "messageLabel": "Your requirements",
+    "submitLabel": "Send enquiry",
+    "successMessage": "Thank you. Your enquiry has been received and a member of our team will be in touch within one working day."
+  }
+}

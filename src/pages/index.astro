@@ -1,0 +1,110 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Picture from '../components/Picture.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const page = (await getEntry('home', 'home'))!.data;
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+const sectors = (await getCollection('sectors')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title={page.title} description={page.description}>
+  <section class="hero">
+    <div class="container hero__inner">
+      <div>
+        <h1>{page.hero.heading}</h1>
+        <p class="lede">{page.hero.text}</p>
+        <div class="hero__ctas">
+          <a class="button" href={page.hero.primaryCta.href}>{page.hero.primaryCta.label}</a>
+          {page.hero.secondaryCta && (
+            <a class="button button--ghost" href={page.hero.secondaryCta.href}>{page.hero.secondaryCta.label}</a>
+          )}
+        </div>
+      </div>
+      <Picture image={page.hero.image} ratio="4 / 3" />
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section__head">
+        <h2>{page.services.heading}</h2>
+        {page.services.intro && <p class="lede">{page.services.intro}</p>}
+      </div>
+      <div class="grid">
+        {services.map((s) => (
+          <a class="card service" href={`/services#${s.id}`}>
+            <h3>{s.data.title}</h3>
+            <p>{s.data.summary}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="Northgate in numbers">
+    <dl class="container stats__inner">
+      {page.stats.map((stat) => (
+        <div>
+          <dt>{stat.label}</dt>
+          <dd>{stat.value}</dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>{page.sectors.heading}</h2>
+        {page.sectors.intro && <p class="lede">{page.sectors.intro}</p>}
+      </div>
+      <ul class="sectors">
+        {sectors.map((s) => (
+          <li>
+            <a href={`/sectors#${s.id}`}>{s.data.title}</a>
+            <p>{s.data.summary}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <CtaBand cta={page.cta} />
+</Base>
+
+<style>
+  .hero { padding: var(--space-16) 0 var(--space-24); }
+  .hero__inner {
+    display: grid;
+    gap: var(--space-12);
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+  .hero__ctas { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-8); }
+  .service { color: var(--color-text); text-decoration: none; }
+  .service:hover { border-color: var(--color-primary); color: var(--color-text); }
+  .service p { color: var(--color-text-muted); margin: 0; }
+  .stats { background: var(--color-primary); color: var(--color-on-primary); padding: var(--space-16) 0; }
+  .stats__inner {
+    display: grid;
+    gap: var(--space-8);
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .stats__inner div { display: flex; flex-direction: column-reverse; }
+  .stats dd { margin: 0; font-size: var(--text-stat); font-weight: var(--weight-bold); line-height: var(--leading-tight); }
+  .stats dt { color: var(--color-on-primary-muted); font-size: var(--text-sm); margin-top: var(--space-2); }
+  .sectors {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-8);
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+  .sectors li { border-top: 2px solid var(--color-primary); padding-top: var(--space-4); }
+  .sectors a { font-size: var(--text-lg); font-weight: var(--weight-bold); text-decoration: none; }
+  .sectors p { color: var(--color-text-muted); margin: var(--space-2) 0 0; }
+</style>

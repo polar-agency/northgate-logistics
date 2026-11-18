@@ -1,0 +1,38 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const page = (await getEntry('sectorsPage', 'sectors'))!.data;
+const sectors = (await getCollection('sectors')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title={page.title} description={page.description}>
+  <section class="section">
+    <div class="container">
+      <h1>{page.heading}</h1>
+      <p class="lede">{page.intro}</p>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container grid sectors">
+      {sectors.map((s) => (
+        <article id={s.id} class="card">
+          <h2 class="sector__title">{s.data.title}</h2>
+          <p>{s.data.summary}</p>
+          <ul class="ticks">
+            {s.data.needs.map((need) => <li>{need}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <CtaBand cta={page.cta} />
+</Base>
+
+<style>
+  .sectors { grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); }
+  .sector__title { font-size: var(--text-xl); }
+  .card p { color: var(--color-text-muted); }
+</style>

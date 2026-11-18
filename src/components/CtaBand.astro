@@ -1,0 +1,31 @@
+---
+interface Props {
+  cta: { heading: string; text: string; button: { label: string; href: string } };
+}
+const { cta } = Astro.props;
+---
+<section class="cta-band">
+  <div class="container cta-band__inner">
+    <div>
+      <h2>{cta.heading}</h2>
+      <p>{cta.text}</p>
+    </div>
+    <a class="button button--inverse" href={cta.button.href}>{cta.button.label}</a>
+  </div>
+</section>
+
+<style>
+  .cta-band {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+    padding: var(--space-16) 0;
+  }
+  .cta-band__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-8);
+  }
+  .cta-band p { color: var(--color-on-primary-muted); max-width: var(--text-width); margin: 0; }
+</style>

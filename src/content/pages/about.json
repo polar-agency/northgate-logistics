@@ -1,0 +1,48 @@
+{
+  "title": "About | Northgate Logistics",
+  "description": "The history, standards and leadership of Northgate Logistics.",
+  "heading": "About Northgate",
+  "intro": "An independent logistics business built on a simple principle: do what was agreed, when it was agreed, and report on it honestly.",
+  "image": { "alt": "Exterior of the Northgate head office at Northgate Park, Harlow" },
+  "history": {
+    "heading": "Our history",
+    "milestones": [
+      { "year": "1994", "text": "Founded in Harlow with four vehicles and a single warehouse." },
+      { "year": "2006", "text": "Opened the Midlands depot at Daventry to serve national retail customers." },
+      { "year": "2015", "text": "Launched temperature-controlled transport and storage." },
+      { "year": "2021", "text": "Opened the North depot at Wakefield and introduced live tracking for all customers." }
+    ]
+  },
+  "accreditations": {
+    "heading": "Standards and accreditations",
+    "intro": "Placeholder section. Accreditation details will be confirmed before launch.",
+    "items": [
+      { "name": "Accreditation placeholder 1", "note": "Details to be confirmed." },
+      { "name": "Accreditation placeholder 2", "note": "Details to be confirmed." },
+      { "name": "Accreditation placeholder 3", "note": "Details to be confirmed." }
+    ]
+  },
+  "leadership": {
+    "heading": "Leadership",
+    "people": [
+      {
+        "name": "Helen Marsh",
+        "role": "Managing Director",
+        "bio": "Helen joined Northgate in 2003 and has led the business since 2014, overseeing its expansion to three depots.",
+        "image": { "alt": "Portrait of Helen Marsh" }
+      },
+      {
+        "name": "David Okafor",
+        "role": "Operations Director",
+        "bio": "David is responsible for the fleet, depots and cold chain operation, and previously ran distribution for a national grocer.",
+        "image": { "alt": "Portrait of David Okafor" }
+      },
+      {
+        "name": "Sarah Lindqvist",
+        "role": "Finance Director",
+        "bio": "Sarah leads finance and commercial contracts, and joined Northgate in 2017 from a major freight forwarder.",
+        "image": { "alt": "Portrait of Sarah Lindqvist" }
+      }
+    ]
+  }
+}

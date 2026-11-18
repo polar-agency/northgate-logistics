@@ -1,0 +1,12 @@
+{
+  "title": "Warehousing",
+  "order": 2,
+  "summary": "Racked and bulk storage with pick, pack and dispatch, integrated with your systems.",
+  "detail": "Ambient storage at Harlow and Daventry, with stock visible to your team in real time and dispatch cut-offs that suit next-day delivery.",
+  "points": [
+    "Pallet, shelf and bulk storage",
+    "Pick, pack and dispatch, including retail-ready orders",
+    "Stock reporting through a secure customer portal"
+  ],
+  "image": { "alt": "Aisle of high-bay racking inside the Daventry warehouse" }
+}

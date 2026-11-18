@@ -1,0 +1,11 @@
+{
+  "title": "Sectors | Northgate Logistics",
+  "description": "Logistics for retail, food and drink, pharma and manufacturing businesses.",
+  "heading": "Sectors we serve",
+  "intro": "We work with businesses whose supply chains depend on precision, documentation and reliable timing.",
+  "cta": {
+    "heading": "Working in a different sector?",
+    "text": "We support a wide range of businesses. Tell us about yours.",
+    "button": { "label": "Get in touch", "href": "/contact" }
+  }
+}

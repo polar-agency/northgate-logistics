@@ -1,0 +1,12 @@
+{
+  "title": "Road freight",
+  "order": 1,
+  "summary": "Full and part loads across the UK, planned around your delivery windows.",
+  "detail": "Our fleet runs scheduled and dedicated routes from three depots, with every load tracked from collection to proof of delivery.",
+  "points": [
+    "Full load, part load and pallet services",
+    "Timed and booked-in deliveries to retail distribution centres",
+    "Live tracking and electronic proof of delivery"
+  ],
+  "image": { "alt": "Northgate curtain-sider leaving the Harlow depot at dawn" }
+}

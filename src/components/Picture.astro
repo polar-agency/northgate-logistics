@@ -1,0 +1,40 @@
+---
+// Shows a real image if `src` is set, otherwise a branded placeholder with the same alt text.
+interface Props {
+  image: { src?: string; alt: string };
+  ratio?: string;
+  class?: string;
+}
+const { image, ratio = '4 / 3', class: className } = Astro.props;
+---
+{image.src ? (
+  <img class:list={['picture', className]} src={image.src} alt={image.alt} style={`aspect-ratio: ${ratio}`} loading="lazy" />
+) : (
+  <div class:list={['picture', 'picture--placeholder', className]} role="img" aria-label={image.alt} style={`aspect-ratio: ${ratio}`}>
+    <span aria-hidden="true">{image.alt}</span>
+  </div>
+)}
+
+<style>
+  .picture {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+  }
+  .picture--placeholder {
+    display: flex;
+    align-items: flex-end;
+    padding: var(--space-6);
+    background:
+      repeating-linear-gradient(135deg, transparent 0 var(--space-6), var(--color-navy-soft) var(--space-6) calc(var(--space-6) + 1px)),
+      linear-gradient(160deg, var(--color-slate), var(--color-navy));
+    color: var(--color-on-primary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-tight);
+  }
+  .picture--placeholder span {
+    max-width: 28ch;
+    opacity: 0.9;
+  }
+</style>
